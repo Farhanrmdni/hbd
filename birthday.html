@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Ulang Tahun BTS21 Style</title>
+    <style>
+        /* Reset default margin dan padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Body */
+        body {
+            overflow: hidden;
+            text-align: center;
+            background: linear-gradient(to bottom, #6a0dad, #8e44ad, #c39bd3);
+            color: #fff;
+        }
+
+        /* Tampilan awal */
+        .welcome-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p.marquee {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            font-size: 1.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #ffebee;
+            font-weight: bold;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+
+        /* Card */
+        .card-container {
+            display: none;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+        }
+
+        .card {
+            background: linear-gradient(to bottom, #6a0dad, #8e44ad, #c39bd3);
+            color: #fff;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+            position: relative;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .card img {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: #fff;
+            padding: 10px;
+        }
+
+        .card p {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Tombol musik di pojok kanan bawah */
+        .music-control {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: #8e44ad;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .music-control:hover {
+            background: #6a0dad;
+        }
+    </style>
+</head>
+<body>
+    <!-- Musik Latar -->
+    <audio id="bgMusic" loop>
+        <source src="img/Last Night on Earth.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung pemutaran musik.
+    </audio>
+
+    <!-- Teks Berjalan -->
+    <p class="marquee">🎉 Selamat Ulang Tahun! Semoga harimu penuh dengan kebahagiaan dan cinta sayang! 🎶</p>
+
+    <!-- Tampilan Awal -->
+    <div class="welcome-container" id="welcomeContainer">
+        <h1>Selamat Ulang Tahun Sayang!</h1>
+        <button onclick="showCards()">Buka Ya</button>
+    </div>
+
+    <!-- Container untuk Card -->
+    <div class="card-container" id="cardContainer">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="img/1.jpg" alt="1">
+            <p>Halo cantik selamat ulang tahun ya yang ke 23 tahun! 🎉
+                ini foto awal kita ketemu dimana bisa di bilang awal pdktan wkwkw, aku ga nyangka kamu malah jadi tetap sama aku sekarang, awal kenal aku sanagat exaited banget mau ketemu kamu dan ternyata kalo udh ketemu real cantik nya dan lucunya hehehe. 
+            </p>
+            <button class="music-control" onclick="toggleMusic()">Matikan Musik</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="img/2.jpg" alt="2">
+            <p>Ini gambaran pencapaian tahun kamu yang paling special tahun ini lebih tepat nya pencapaian hidup kamu, kamu keren aku bangga sama kamu ga salah aku milih kamu hihihi 🎂 semoga pencapaian kamu berikutnya terus sama aku ya 💜</p>
+            <button class="music-control" onclick="toggleMusic()">Matikan Musik</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="img/3.jpg" alt="3">
+            <p>Aku bahagia bisa ketemu kamu, semoga kita bisa selamanya ya kaya gini hehehe cerita selalau ya sayang ke aku, kamu tau ga si aku bingung mau kasih kamu apa wkwkwk tapi semoga kamu suka ya sayang hehehe di pake terus ya! 🎈</p>
+            <button class="music-control" onclick="toggleMusic()">Matikan Musik</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="img/4.jpg" alt="4">
+            <p>I LOVE U! 💜
+            jujur maaf ya aku ga sempet edit nya lagi sayang tabrakan sama jam tidur dan ngisi luang buat telpon hubungin kamu wkwkw Love u sayang semangat terus ya walau ga sempurna tapi kan cinta aku ke kamu udah sempurna wkwkwkw jangan salpok ya kalo hehehe mulu aku lupa munculin emot di keybord hehe
+            </p>
+            <button class="music-control" onclick="toggleMusic()">Matikan Musik</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const bgMusic = document.getElementById("bgMusic");
+        let musicPlaying = false;
+
+        function showCards() {
+            const welcomeContainer = document.getElementById("welcomeContainer");
+            const cardContainer = document.getElementById("cardContainer");
+
+            // Sembunyikan tampilan awal
+            welcomeContainer.style.display = "none";
+
+            // Tampilkan card-container
+            cardContainer.style.display = "block";
+
+            // Mainkan musik dari menit tertentu
+            playSegment();
+        }
+
+        function playSegment() {
+            const startMinute = 0.16; // Mulai dari 10 detik
+            const endMinute = 1.5;   // Berhenti di 1 menit 30 detik
+
+            const startTime = startMinute * 60;
+            const endTime = endMinute * 60;
+
+            bgMusic.currentTime = startTime; // Mulai dari waktu tertentu
+            bgMusic.play();
+            musicPlaying = true;
+
+            setTimeout(() => {
+                bgMusic.pause();
+                bgMusic.currentTime = 0;
+                musicPlaying = false;
+            }, (endTime - startTime) * 1000);
+        }
+
+        function toggleMusic() {
+            if (musicPlaying) {
+                bgMusic.pause();
+                musicPlaying = false;
+                updateButtonText("Nyalakan Musik");
+            } else {
+                bgMusic.play();
+                musicPlaying = true;
+                updateButtonText("Matikan Musik");
+            }
+        }
+
+        function updateButtonText(text) {
+            document.querySelectorAll(".music-control").forEach(button => {
+                button.textContent = text;
+            });
+        }
+    </script>
+</body>
+</html>
